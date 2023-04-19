@@ -1,0 +1,39 @@
+﻿@{
+}
+
+@model Entertainers
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h2>@Model.EntStageName</h2>
+                </div>
+                <div class="card-body">
+                    <p>Entertainer ID: @Model.EntertainerId</p>
+                    <p>Address: @Model.EntStreetAddress @Model.EntCity, @Model.EntState @Model.EntZipCode</p>
+                    <p>Phone Number: @Model.EntPhoneNumber</p>
+                    <p>Email: @Model.EntEmailAddress</p>
+                    <p>Website: @Model.EntWebPage</p>
+                    <p>Social Security Number (pls don't share this!): @Model.EntSsn</p>
+                    <p>Date Entered: @Model.DateEntered</p>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="btn-toolbar" role="toolbar">
+    <div class="btn-group mr-2" role="group">
+        <a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.EntertainerId" class="btn btn-secondary">Edit</a>
+    </div>
+    <div class="btn-group mr-2" role="group">
+        <a asp-controller="Home" asp-action="Delete" asp-route-id="@Model.EntertainerId" class="btn btn-danger">Delete</a>
+    </div>
+    <div class="btn-group" role="group">
+        <a asp-controller="Home" asp-action="Entertainers" class="btn btn-light">Back</a>
+    </div>
+</div>
+
